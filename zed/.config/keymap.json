@@ -1,0 +1,51 @@
+[
+  {
+    "bindings": {
+      "cmd-k": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "K": "editor::Hover",
+      "shift-l": ["workspace::SendKeystrokes", ": tabnext enter"],
+      "shift-h": ["workspace::SendKeystrokes", ": tabprevious enter"],
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "space c r": "editor::Rename",
+      "space c a": "editor::ToggleCodeActions",
+      "space space": "file_finder::Toggle",
+      "z c": "editor::Fold",
+      "z o": "editor::UnfoldLines",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+
+  // visual, visual line & visual block modes
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "shift-k": ["workspace::SendKeystrokes", "d k k p shift-v"],
+      "shift-j": ["workspace::SendKeystrokes", "d p shift-v"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "cmd-i": ["workspace::SendKeystrokes", "ctrl-x ctrl-o"]
+    }
+  },
+
+  // mappings for context menu in insert and normal mode
+  {
+    "context": "Editor && vim_mode == insert && menu || Editor && vim_mode == normal && menu",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext"
+    }
+  }
+]

@@ -1,0 +1,127 @@
+window:
+  # dimensions:
+  #   columns: 100
+  #   lines: 85
+  padding:
+    x: 15
+    y: 15
+  dynamic_padding: false
+  decorations: buttonless
+  startup_mode: Maximized
+  # startup_mode: SimpleFullscreen
+  opacity: 1.0
+  option_as_alt: Both
+
+scrolling:
+  history: 1000
+  multiplier: 3
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Medium
+  italic:
+    family: FiraCode Nerd Font
+    style: "Light Italic"
+  size: 16.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+draw_bold_text_with_bright_colors: false
+
+custom_cursor_colors: true
+
+colors:
+  primary:
+    background: "#282a36"
+    foreground: "#f8f8f2"
+    bright_foreground: "#ffffff"
+  cursor:
+    text: "#282a36"
+    cursor: "#f8f8f2"
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  selection:
+    text: CellForeground
+    background: "#44475a"
+  normal:
+    black: "#21222c"
+    red: "#ff5555"
+    green: "#50fa7b"
+    yellow: "#f1fa8c"
+    blue: "#bd93f9"
+    magenta: "#ff79c6"
+    cyan: "#8be9fd"
+    white: "#f8f8f2"
+  bright:
+    black: "#6272a4"
+    red: "#ff6e6e"
+    green: "#69ff94"
+    yellow: "#ffffa5"
+    blue: "#d6acff"
+    magenta: "#ff92df"
+    cyan: "#a4ffff"
+    white: "#ffffff"
+  search:
+    matches:
+      foreground: "#44475a"
+      background: "#50fa7b"
+    focused_match:
+      foreground: "#44475a"
+      background: "#ffb86c"
+  footer_bar:
+    background: "#282a36"
+    foreground: "#f8f8f2"
+  hints:
+    start:
+      foreground: "#282a36"
+      background: "#f1fa8c"
+    end:
+      foreground: "#f1fa8c"
+      background: "#282a36"
+
+bell:
+  animation: EaseOutExpo
+  color: "0xffffff"
+  duration: 0
+
+key_bindings:
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: F, mods: Command, action: ToggleFullscreen }
+  - { key: Left, mods: Alt, chars: "\x1bb" } # Skip word left
+  - { key: Right, mods: Alt, chars: "\x1bf" } # Skip word right
+  - { key: Left, mods: Command, chars: "\x1bOH", mode: AppCursor } # Home
+  - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor } # End
+  - { key: Back, mods: Command, chars: "\x15" } # Delete line
+  - { key: Back, mods: Alt, chars: "\x1b\x7f" } # Delete word
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: false
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+cursor:
+  style: Block
+
+  unfocused_hollow: true
+
+live_config_reload: true
